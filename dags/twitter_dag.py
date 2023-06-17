@@ -4,7 +4,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 from datetime import datetime
-from twitter_etl import run_twitter_etl, count_favorite
+from twitter_etl import run_twitter_etl, favorite_counter
 
 
 default_args = {
@@ -31,10 +31,10 @@ run_etl = PythonOperator(
     dag=dag
 )
 
-count_favorites = PythonOperator(
-    task_id='counter_twitter_etl',
-    python_callable=count_favorite,
+run_counter = PythonOperator(
+    task_id='favorite_counter',
+    python_callable=favorite_counter,
     dag=dag
 )
 
-run_etl >> count_favorites
+run_etl >> run_counter
