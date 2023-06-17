@@ -4,7 +4,7 @@ This a practical activity part of the MBA in Data Engineering from XPE. It consi
 
 1. The first one is responsible for extracting data from twitter, do a simple transformation and loads into a JSON file.
 
-2. The second one counts the number of people who favorite that tweet.
+2. The second one counts the number of people who favorite each tweet.
 
 ## Requirements
 
@@ -13,7 +13,7 @@ This a practical activity part of the MBA in Data Engineering from XPE. It consi
 
 ## Running with airflow
 
-If you want to run the etl with airflow go to the next section
+If you want to run the etl without airflow go to the next section
 
 1. Enter in your airflow folder
 
@@ -38,8 +38,8 @@ airflow scheduler
 
 5. Access you browser in http://localhost:8080/home
 
-6. Create your variables on admin > variables, you should create four 
-access_key, access_secret, consumer_key and consumer_secret
+6. Create your variables on admin > variables, you should create four:
+`access_key`, `access_secret`, `consumer_key` and `consumer_secret`
 
 7. Start the dag, go to DAGS > find twitter_dag > mark DAG in the top left corner
 
